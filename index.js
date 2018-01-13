@@ -25,5 +25,5 @@ require("./routes/authRoutes")(app);
 mongoose.connect(keys.mongoURI);
 
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+  console.log(`Info : Server listening on port ${PORT}!`);
 });
