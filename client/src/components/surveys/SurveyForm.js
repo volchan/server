@@ -20,7 +20,8 @@ const FIELDS = [
   },
   {
     label: "Recipients List",
-    name: "emails"
+    name: "emails",
+    errorMsg: "list of emails"
   }
 ];
 
@@ -60,9 +61,9 @@ class SurveyForm extends Component {
 const validate = values => {
   const errors = {};
 
-  _.each(FIELDS, ({ name }) => {
+  _.each(FIELDS, ({ name, errorMsg }) => {
     if (!values[name]) {
-      errors[name] = `You must provide a ${name}!`
+      errors[name] = `You must provide a ${errorMsg || name}!`
     }
   })
 
