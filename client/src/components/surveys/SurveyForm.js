@@ -5,30 +5,11 @@ import { Link } from "react-router-dom";
 
 import SurveyField from "./SurveyField";
 import validateEmails from "../../utils/validateEmails";
-
-const FIELDS = [
-  {
-    label: "Survey Title",
-    name: "title"
-  },
-  {
-    label: "Survey Subject",
-    name: "subject"
-  },
-  {
-    label: "Survey Body",
-    name: "body"
-  },
-  {
-    label: "Recipients List",
-    name: "emails",
-    errorMsg: "list of emails"
-  }
-];
+import formFields from "./formFields";
 
 class SurveyForm extends Component {
   renderFields() {
-    return _.map(FIELDS, ({ label, name }) => {
+    return _.map(formFields, ({ label, name }) => {
       return (
         <Field
           key={name}
@@ -64,7 +45,7 @@ const validate = values => {
 
   errors.emails = validateEmails(values.emails || "");
 
-  _.each(FIELDS, ({ name, errorMsg }) => {
+  _.each(formFields, ({ name, errorMsg }) => {
     if (!values[name]) {
       errors[name] = `You must provide a ${errorMsg || name}!`;
     }
