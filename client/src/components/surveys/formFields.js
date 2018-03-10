@@ -13,7 +13,7 @@ export default [
   },
   {
     label: "Recipients List",
-    name: "emails",
+    name: "recipients",
     errorMsg: "list of emails"
   }
 ];
