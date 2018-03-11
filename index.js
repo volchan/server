@@ -11,6 +11,7 @@ require("./services/passport");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+console.log("server port:", PORT);
 
 app.use(bodyParser.json());
 app.use(
